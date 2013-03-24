@@ -1,0 +1,28 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+div#container {
+  height: 60%;
+}
+div#container video {
+  max-width: 80%;
+  height: 100%;
+}
+div#container div#screenshots {
+  background-color: gray;
+  min-height: 100%;
+  overflow: auto;
+  width: 20%;
+  float: right;
+  display: inline-block;
+}
+div#container div#screenshots img {
+  width: 50%;
+}
+div#controls {
+  width: 100%;
+}
+/* ===== Primary Styles ========================================================
+   Author:
+   ========================================================================== */

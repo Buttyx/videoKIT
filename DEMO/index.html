@@ -1,0 +1,58 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>DEMO videoKIT - @VERSION@ </title>
+        <meta name="description" content="Video annotations tool">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style/style.css">
+        <script src="jquery-1.7.2.min.js"></script>
+        <script src="../videoKIT.js"></script>
+    </head>
+
+    <body>
+    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+                    <div id="container">            
+                        <video id="video" controls >
+                            <source src="../resources/aav1.mp4"  type="video/mp4" />
+                            <source src="../resources/aav1.webm"  type="video/webm" />
+                            <source src="../resources/aav1.ogv"  type="video/theora" />
+                        </video>
+                        <div id="screenshots"></div>
+                    </div>
+                    
+                    <div id="controls">
+                        <button id="toSave">save</button>
+                        <button id="toImage">image</button>
+                    </div>
+                    
+                    <script>
+                        var video = new VideoKIT(document.getElementById("video")),
+                            steam;
+
+                        $("#toSave").click(function () {
+                            video.saveFrame();
+                        });
+
+                        $("#toImage").click(function () {
+                            document.getElementById("screenshots").appendChild(video.copyFrameToImg({withLink: true}));
+                        });
+                        
+                        stream = video.createStream(50);
+                        
+                        document.body.appendChild(stream.target);
+                    </script>
+                
+                
+    </body>
+</html>
